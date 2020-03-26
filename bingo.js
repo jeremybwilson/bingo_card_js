@@ -63,7 +63,7 @@ const resetBingoCheckCounter = () => {
 function youWin(sq1, sq2, sq3, sq4, sq5) {
   console.log("BINGO! You win!");
   // console.log(`.:: DEBUG ::. Your winning values are:  ${sq1}, ${sq2}, ${sq3}, ${sq4}, ${sq5}`);
-  resetBingoCheckCounter();
+  // resetBingoCheckCounter();  // Was for debugging purposes, can be removed
 }
 
 // function to check lines (drawnNumbrs) with bingoCard array values passed from 'checkBingo' functions 
@@ -110,8 +110,7 @@ function checkLines(sq1, sq2, sq3, sq4, sq5) {
  * then run checkLines function 
  */
 function checkVerticalBingo() { // checking for vertical bingo patterns here
-
-  let bingoCheckCounter = 0;
+  // let bingoCheckCounter = 0;  // Was for debugging purposes, can be removed
   
   if(!isBingo) {  // if isBingo == false, loop through array 
     for (let i = 0; i < 5; i++) {       // for 0 - 4 positions, assign sq variables
@@ -122,7 +121,7 @@ function checkVerticalBingo() { // checking for vertical bingo patterns here
       var sq5 = bingoCard[i + 20];   // for i = 4,  =>   20, 21, 22, 23, 24
       
       // counting the number of times this for loop is firing
-      // bingoCheckCounter++;
+      // bingoCheckCounter++;  // Was for debugging purposes, can be removed
       
       checkLines(sq1, sq2, sq3, sq4, sq5);
     }
@@ -131,8 +130,7 @@ function checkVerticalBingo() { // checking for vertical bingo patterns here
 }
 
 function checkHorizontalBingo() { // checking for horizontal bingo patterns here
-
-  let bingoCheckCounter = 0;
+  // let bingoCheckCounter = 0;  // Was for debugging purposes, can be removed
 
   if(!isBingo) {  // if isBingo == false, loop through array or continue to loop
     
@@ -177,7 +175,7 @@ function checkHorizontalBingo() { // checking for horizontal bingo patterns here
       }
       
       // counting the number of times this function is being run
-      // bingoCheckCounter++;
+      // bingoCheckCounter++;  // Was for debugging purposes, can be removed
 
       checkLines(sq1, sq2, sq3, sq4, sq5);
     }
@@ -186,8 +184,7 @@ function checkHorizontalBingo() { // checking for horizontal bingo patterns here
 }
 
 function checkDiagonalBingo() {
-
-  let bingoCheckCounter = 0;
+  // let bingoCheckCounter = 0;  // Was for debugging purposes, can be removed
 
   if(!isBingo) {  // if isBingo == false, then loop through array 
 
@@ -211,7 +208,7 @@ function checkDiagonalBingo() {
       }
       
       // counting the number of times this function is being run
-      // bingoCheckCounter++;
+      // bingoCheckCounter++;  // Was for debugging purposes, can be removed
       
       checkLines(sq1, sq2, sq3, sq4, sq5);
     }
@@ -226,7 +223,7 @@ function checkForBingo (bingoCard, drawnNumbers) {
   // this code for debug purposes, you can remove.
   console.log('Drawn Numbers: ' + JSON.stringify(drawnNumbers));
 
-  // how do we skip these functions if we know the drawnNumbers array is already 1) diagonal, 2) horizontal, or 3) vertical
+  // execute checkBingo functions 
   checkDiagonalBingo();
   checkHorizontalBingo();
   checkVerticalBingo();
